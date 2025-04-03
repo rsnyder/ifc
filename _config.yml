@@ -2,15 +2,15 @@
 title:            Juncture IFC
 longtitle:        Juncture IFC
 author:           Ron Snyder
-email:            sighingnow@gmail.com
+email:            ron@snyderjr.com
 description: >
-  Build Jekyll site with the GitBook style.
+  Juncture Iframe Components.
 
 version:          1.0
 gitbook_version:  3.2.3
 
-url:              'https://sighingnow.github.io'
-baseurl:          '/jekyll-gitbook'
+url:              'https://ifc.juncture-digital.org'
+baseurl:          '/'
 rss:              RSS
 
 # bootstrap: use the remote theme for the site itself
