@@ -549,5 +549,5 @@ const processPage = () => {
 })(window.history);
 
 // Listen for the custom location change event
-// window.addEventListener('locationchange', () => setTimeout(() => processPage(), 0))
-window.addEventListener('locationchange', () => setTimeout(() => console.log(location.href), 0))
+window.addEventListener('locationchange', () => setTimeout(() => processPage(), 0))
+// window.addEventListener('locationchange', () => setTimeout(() => console.log(location.href), 0))
