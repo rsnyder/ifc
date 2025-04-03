@@ -5,7 +5,7 @@ import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.18.0/cdn/compone
 import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.18.0/cdn/components/tab-group/tab-group.js';
 import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.18.0/cdn/components/tab-panel/tab-panel.js';
 
-console.log('main.js loaded')
+console.log('index.js loaded')
 
 const classes = new Set('small medium large left right center shadow'.split(' '))
 const parseCodeEl = (el) => {
@@ -551,3 +551,4 @@ const processPage = () => {
 // Listen for the custom location change event
 window.addEventListener('locationchange', () => setTimeout(() => processPage(), 0))
 // window.addEventListener('locationchange', () => setTimeout(() => console.log(location.href), 0))
+processPage()
