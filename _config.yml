@@ -68,6 +68,7 @@ ordered_collections:
   - components
   - others
   - examples
+  - posts
 
 page_width: 800px
 

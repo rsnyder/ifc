@@ -1,6 +1,6 @@
 ---
 layout: basic
-title: Jekyll Gitbook Theme
+title: Juncture IFC
 permalink: /
 ---
 
