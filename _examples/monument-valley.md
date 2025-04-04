@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: base
 ---
 
 `header title="Monument Valley" img=wc:Monument_Valley_banner.jpg`
