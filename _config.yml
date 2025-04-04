@@ -11,10 +11,14 @@ collections:
   components:
     output: true
     permalink: /:collection/:path/
+  examples:
+    output: true
+    permalink: /:collection/:path/
 
 nav_pages:
   - about.md
   - components.md
+  - examples.md
 
 max-width: 1000px
 
