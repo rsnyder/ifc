@@ -243,7 +243,6 @@ const addMessageHandler = () => {
   window.addEventListener('message', (event) => {
     if (event.data.type === 'setAspect') {
       const sendingIframe = Array.from(document.querySelectorAll('iframe')).find((iframe) => iframe.contentWindow === event.source)
-      console.log('setAspect', sendingIframe, event.data.aspect)
       if (sendingIframe) sendingIframe.style.aspectRatio = event.data.aspect
     } else if (event.data.type === 'openLink') {
       window.open(event.data.url, '_blank')
@@ -496,7 +495,6 @@ const makeEntityPopups = () => {
 ////////// End Wikidata Entity functions //////////
 
 const processPage = () => {
-  console.log('processPage')
   let content = document.querySelector('section.normal.markdown-section, article.post')
   content.innerHTML = restructureMarkdownToSections(content).innerHTML
 
