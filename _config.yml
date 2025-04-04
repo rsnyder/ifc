@@ -8,17 +8,24 @@ author:
   email: your-email@domain.com
 
 collections:
-  components:
+  pages:
+    output: true
+    permalink: /:collection/:path/
+  docs:
     output: true
     permalink: /:collection/:path/
   examples:
     output: true
     permalink: /:collection/:path/
+  components:
+    output: true
+    permalink: /:collection/:path/
 
 nav_pages:
-  - about.md
-  - components.md
-  - examples.md
+  - _pages/about.md
+  - _pages/docs.md
+  - _pages/examples.md
+  - _pages/blog.md
 
 max-width: 1000px
 

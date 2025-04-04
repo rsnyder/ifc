@@ -16,9 +16,17 @@ layout: home
   }
 </style>
 
+<script>
+  const moved = new Set('audio header image map youtube'.split(' '))
+  const pathRoot = location.pathname.split('/')[1]
+  if (moved.has(pathRoot)) location.pathname = `/components/${pathRoot}`
+</script>
+
 <div class="container">
   <h1>404</h1>
 
   <p><strong>Page not found :(</strong></p>
   <p>The requested page could not be found.</p>
 </div>
+
+
