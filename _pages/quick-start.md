@@ -3,7 +3,7 @@ title: Quick Start
 author: Fon Snyder
 date: 2025-03-30
 category: Jekyll
-layout: basic
+layout: page
 ---
 
 # Quick Start

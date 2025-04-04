@@ -1,5 +1,5 @@
 ---
-layout: component
+layout: post
 ---
 
 # YouTube

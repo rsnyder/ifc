@@ -1,5 +1,5 @@
 ---
-layout: component
+layout: post
 ---
 
 # Image
@@ -21,7 +21,7 @@ The most basic use of the `image` tag is to specify the URL of the image to be d
 
 ###### HTML
 
-```markup
+```html
 <iframe
   src="https://ifc.juncture-digital.org/image?src=wc:Sunflower_sky_backdrop.jpg"
 ></iframe>
@@ -144,7 +144,7 @@ In this example the positioning properties `medium` and `center` are used to dis
 
 ###### HTML
 
-```markup
+```html
 <iframe
   src="image?src=wc:Incense_in_Vietnam.jpg"
   class="medium center"
@@ -175,7 +175,7 @@ In this example the positioning properties `medium` and `center` are used to dis
 
 ###### HTML
 
-```markup
+```html
 <iframe
   src="image?src=gh:rsnyder/ifc/main/docs/components/monument-valley.jpg&static"
   class="medium center box-shadow"
@@ -202,7 +202,7 @@ In this example the positioning properties `medium` and `center` are used to dis
 
 ###### HTML
 
-```markup
+```html
 <iframe
   src="image?src=wc:Monument_Valley,_Utah,_USA_(23611451292).jpg&static"
   class="medium center box-shadow"

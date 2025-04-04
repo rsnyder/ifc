@@ -45,7 +45,7 @@ const parseCodeEl = (el) => {
   return parsed
 }
 
-const ifcPrefix = location.hostname === 'localhost' ? 'http://localhost:8080' : 'https://ifc.juncture-digital.org'
+const ifcPrefix = location.hostname === 'localhost' ? 'http://localhost:4000' : 'https://ifc.juncture-digital.org'
 // const ifcPrefix = 'https://ifc.juncture-digital.org'
 const makeIframe = (code) => {
   let iframe = document.createElement('iframe')
@@ -495,8 +495,11 @@ const makeEntityPopups = () => {
 ////////// End Wikidata Entity functions //////////
 
 const processPage = () => {
-  let content = document.querySelector('section.normal.markdown-section, article.post')
-  content.innerHTML = restructureMarkdownToSections(content).innerHTML
+  let content = document.querySelector('section.normal.markdown-section, div.post-content')
+  console.log(content)
+  let newContent = restructureMarkdownToSections(content)
+  console.log(newContent)
+  content.innerHTML = newContent.innerHTML
 
   addMessageHandler()
   makeEntityPopups()

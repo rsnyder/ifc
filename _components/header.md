@@ -1,5 +1,5 @@
 ---
-layout: component
+layout: post
 ---
 
 # Header
@@ -88,7 +88,7 @@ Displays a title with default background.
 
 ##### HTML
 
-```markup
+```html
 <iframe
   src="https://ifc.juncture-digital.org/header?title=Monument+Valley&img=wc:Monument_Valley_banner.jpg"
   allowfullscreen
@@ -115,7 +115,7 @@ Displays a title with default background.
 
 ##### HTML
 
-```markup
+```html
 <iframe
   src="https://ifc.juncture-digital.org/header?title=Monument+Valley&img=wc:Monument_Valley_banner.jpg&data=[Home](/)|[About](/about)"
   allowfullscreen
@@ -143,7 +143,7 @@ Displays a title with default background.
 
 ##### HTML
 
-```markup
+```html
 <iframe
   src="https://ifc.juncture-digital.org/header?img=wc:Monument_Valley_banner.jpg&data=[Home](/)|[About](/about)"
   allowfullscreen

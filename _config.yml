@@ -1,82 +1,29 @@
-# Configurations
-title:            Juncture IFC
-longtitle:        Juncture IFC
-author:           Ron Snyder
-email:            ron@snyderjr.com
+title: Website Title
+
 description: >
-  Juncture Iframe Components.
+  Website Description
 
-version:          1.0
-gitbook_version:  3.2.3
-
-url:              'https://ifc.juncture-digital.org'
-baseurl:          ''
-rss:              RSS
-
-# bootstrap: use the remote theme for the site itself
-remote_theme: sighingnow/jekyll-gitbook
-
-toc:
-  enabled: false
-  h_min:   1
-  h_max:   3
-
-# customize the link favicon in header, will be {{site.baseurl}}/{{site.favicon_path}}
-favicon_path:     assets/images/favicon.ico
-
-# markdown render engine.
-markdown:         kramdown
-kramdown:
-  auto_ids:               true
-  input:                  GFM
-  math_engine:            mathjax
-  smart_quotes:           lsquo,rsquo,ldquo,rdquo
-  toc_levels:             1..6
-  syntax_highlighter:     rouge
-  syntax_highlighter_opts:
-    guess_lang:           true
-
-syntax_highlighter_style: colorful
-
-markdown_ext:             markdown,mkdown,mkdn,mkd,md
-
-# Permalinks
-permalink:                /:categories/:year-:month-:day-:title:output_ext
-
-# Disqus comments
-# disqushandler:            sighingnow
-
-exclude:
-  - _drafts
+author:
+  name: Name
+  email: your-email@domain.com
 
 collections:
   components:
     output: true
     permalink: /:collection/:path/
-  pages:
-    output: true
-    permalink: /:collection/:path/
-  others:
-    output: true
-    permalink: /:collection/:path/
-  examples:
-    output: true
-    permalink: /:collection/:path/
 
-ordered_collections:
-  - pages
-  - components
-  - others
-  - examples
-  - posts
+nav_pages:
+  - about.md
+  - components.md
 
-page_width: 800px
+max-width: 800px
 
-destination:      ./_site
-incremental:      false
-regenerate:       true
+show_excerpts: true
+show_rss_feed: true
+show_github_link: true
 
 plugins:
   - jekyll-feed
-  - jekyll-readme-index
-  - jemoji
+  - jekyll-seo-tag
+
+content_selector: div.post-content,div.home

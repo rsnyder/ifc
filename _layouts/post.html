@@ -1,58 +1,56 @@
-<!-- post -->
-<!DOCTYPE HTML>
-<html lang="en" >
-  <head>
+---
+layout: base
+---
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
-    {%- include head.html -%}
+  {%- if page.omit_header -%}
+  {%- else -%}
+    <header class="post-header">
+      <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+      <div class="post-meta">
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        {% assign pdate = page.date | date_to_xmlschema %}
 
-    {% if page.previous %}
-      <link rel="prev" href="{{site.baseurl}}{{page.previous.url}}" />
-    {% else %}
-      <link rel="prev" href="{{site.baseurl}}/" />
-    {% endif %}
+        {%- if page.modified_date %}<span class="meta-label">Published:</span>{% endif %}
+        <time class="dt-published" datetime="{{ pdate }}" itemprop="datePublished">
+          {{ pdate | date: date_format }}
+        </time>
 
-    {% if page.next %}
-      <link rel="next" href="{{site.baseurl}}{{page.next.url}}" />
-    {% endif %}
+        {%- if page.modified_date -%}
+          <span class="bullet-divider">•</span>
+          <span class="meta-label">Updated:</span>
+          {%- assign mdate = page.modified_date | date_to_xmlschema %}
+          <time class="dt-modified" datetime="{{ mdate }}" itemprop="dateModified">
+            {{ mdate | date: date_format }}
+          </time>
+        {%- endif -%}
 
-    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-
-  </head>
-  <body>
-    <div class="book">
-
-      {%- include toc-date.html -%}
-
-      <div class="book-body">
-        <div class="book-header" role="navigation">
-          <!-- Title -->
-          <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i>
-            {% if page.title %}
-              <a href="." >{{ page.title | escape }}</a>
-            {% else %}
-              <a href="." >{{ site.title | escape }}</a>
-            {% endif %}
-          </h1>
+        {%- if page.author %}
+        <div class="{% unless page.modified_date %}force-inline {% endunless %}post-authors">
+          {%- for author in page.author %}
+            <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
+            {%- if forloop.last == false %}, {% endif -%}
+          {% endfor %}
         </div>
-
-        <div class="body-inner">
-          {%- include body.html -%}
-        </div>
+        {%- endif %}
+        
+        <br/><span class="post-meta">Tags:</span>
+        {% for tag in page.tags %}
+          {{ tag }}{% if forloop.last != true %},&nbsp;{% endif %}
+        {% endfor %}
 
       </div>
+    </header>
+  {%- endif %}
 
-      <script>
-        var gitbook = gitbook || [];
-        gitbook.push(function() {
-            gitbook.page.hasChanged({%- include metadata-post.json.tpl -%});
-        });
-      </script>
-    </div>
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
 
-    {%- include footer.html -%}
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>
 
-    <script src="{{ '/assets/js/main.js' | relative_url }}" type="module"></script>
-
-  </body>
-</html>
+<script>
+  let maxWidth = '{{ page.max-width }}';
+</script>
