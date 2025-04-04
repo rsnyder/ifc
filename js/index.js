@@ -5,8 +5,6 @@ import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.18.0/cdn/compone
 import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.18.0/cdn/components/tab-group/tab-group.js';
 import 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.18.0/cdn/components/tab-panel/tab-panel.js';
 
-console.log('index.js loaded')
-
 const classes = new Set('small medium large left right center shadow'.split(' '))
 const parseCodeEl = (el) => {
   let tokens = []
@@ -55,7 +53,7 @@ const makeIframe = (code) => {
   if (code.id) iframe.id = code.id
   if (code.classes.length > 0) iframe.className = code.classes.join(' ')
   let args = [...Object.entries(code.kwargs).map(([key, value]) => `${key}=${encodeURIComponent(value)}`), ...(code.booleans || [])].join('&')
-  iframe.src = `${ifcPrefix}/${code.tag}?${args}`
+  iframe.src = `${ifcPrefix}/components/${code.tag}?${args}`
 
   let isOnlyChild = code.el.parentElement?.children.length === 1 && code.el.parentElement?.children[0] === code.el
   if (isOnlyChild) code.el.parentElement.replaceWith(iframe)
@@ -495,10 +493,10 @@ const makeEntityPopups = () => {
 ////////// End Wikidata Entity functions //////////
 
 const processPage = () => {
-  let content = document.querySelector('section.normal.markdown-section, div.post-content')
+  let content = document.querySelector('section.normal.markdown-section, div.post-content, div.blog')
   console.log(content)
+  if (!content) content = document.body
   let newContent = restructureMarkdownToSections(content)
-  console.log(newContent)
   content.innerHTML = newContent.innerHTML
 
   addMessageHandler()

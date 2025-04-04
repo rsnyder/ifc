@@ -1,5 +1,6 @@
 ---
-layout: post
+title: Header
+layout: doc
 ---
 
 # Header
@@ -16,6 +17,7 @@ If navigation links are specified a navigation bar will be positioned at the top
 
 
 ## Properties
+{: .properties}
 
 **[alpha](#examples)** (_float_):  The opacity level of the title bar when a background image is used.  The value is a number between 0 (no opacity) and 1.0 (full opacity). The default is 0.3.
 

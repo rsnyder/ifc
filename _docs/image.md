@@ -1,5 +1,6 @@
 ---
-layout: post
+title: Image
+layout: doc
 ---
 
 # Image
@@ -16,22 +17,23 @@ The most basic use of the `image` tag is to specify the URL of the image to be d
 ###### Markdown
 
 ```markup
-`image src=wc:Sunflower_sky_backdrop.jpg`
+`image src=wc:Sunflower_sky_backdrop.jpg center medium`
 ```
 
 ###### HTML
 
 ```html
 <iframe
-  src="https://ifc.juncture-digital.org/image?src=wc:Sunflower_sky_backdrop.jpg"
+  src="https://ifc.juncture-digital.org/image?src=wc:Sunflower_sky_backdrop.jpg&center%medium"
 ></iframe>
 ```
 
 ###### Rendered
 
-`image src=wc:Sunflower_sky_backdrop.jpg`
+`image src=wc:Sunflower_sky_backdrop.jpg center medium`
 
 ## Properties
+{: .properties}
 
 Many of the image-specific properties used in the ve-image viewer are based on the [IIIF Image API](https://iiif.io/api/image/2.1/).  The property values are often directly passed to the IIIF server hosting the images.  For detailed explanations of the properties and possible values, the [IIIF image request parameters](https://iiif.io/api/image/2.1/#image-request-parameters) documentation should be consulted.
 

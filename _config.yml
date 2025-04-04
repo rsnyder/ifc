@@ -1,11 +1,11 @@
-title: Website Title
+title: Juncture IFC
 
 description: >
-  Website Description
+  Juncture Iframe Components.
 
 author:
-  name: Name
-  email: your-email@domain.com
+  name: Ron Snyder
+  email: ron@snyderjr.com
 
 collections:
   pages:
@@ -36,5 +36,3 @@ show_github_link: true
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-
-content_selector: div.post-content,div.home

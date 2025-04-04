@@ -1,5 +1,6 @@
 ---
-layout: post
+title: Map
+layout: doc
 ---
 
 # Map
@@ -7,6 +8,7 @@ layout: post
 The `map` tag displays an interactive map centered on a specified location.  This map component uses the [Leaflet](https://leafletjs.com/).  Leaflet is a tool that lets websites show interactive maps. You can zoom in, zoom out, and move around the map, just like you would with Google Maps. It’s lightweight, fast, and works on phones, tablets, and computers. Many websites use Leaflet to help people explore locations, see points of interest, or display custom map data.
 
 ## Properties
+{: .properties}
 
 **[caption](#basic-examples)** (_string_): Defines the text to use for a caption that is displayed below the map.
 

@@ -1,5 +1,6 @@
 ---
-layout: post
+title: YouTube
+layout: doc
 ---
 
 # YouTube
@@ -7,6 +8,7 @@ layout: post
 The `youtube` tag displays a YouTube video player with a specified video.
 
 ## Properties
+{: .properties}
 
 **[alt](#basic-examples)** (_string_):  The text to use in the _alt_ tag used by screen readers.  If not provided an _alt_ tag is automatically generated from the IIIF manifest label property or inferred from the filename.
 

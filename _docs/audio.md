@@ -1,5 +1,6 @@
 ---
-layout: post
+title: Audio
+layout: doc
 ---
 
 # Audio
@@ -7,6 +8,7 @@ layout: post
 The `audio` tag displays an HTML audio player with a specified file.
 
 ## Properties
+{: .properties}
 
 **[caption](#basic-example)** (_string_): Defines the text to use for a caption that is displayed below the video player.
 
