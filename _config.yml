@@ -16,7 +16,7 @@ nav_pages:
   - about.md
   - components.md
 
-max-width: 800px
+max-width: 1000px
 
 show_excerpts: true
 show_rss_feed: true
