@@ -241,6 +241,7 @@ const makeTabs = (rootEl) => {
 
 const addMessageHandler = () => {
   window.addEventListener('message', (event) => {
+    console.log(event)
     if (event.data.type === 'setAspect') {
       const sendingIframe = Array.from(document.querySelectorAll('iframe')).find((iframe) => iframe.contentWindow === event.source)
       if (sendingIframe) sendingIframe.style.aspectRatio = event.data.aspect
@@ -522,33 +523,4 @@ const processPage = () => {
   addActionLinks(content)
 }
 
-// Catch URL changes initiated programmatically (via pushState/replaceState) and by user navigation (via popstate).
-// Since this module is cached and persists across navigations, the event listeners remain active, ensuring processPage() 
-// is called every time the URL changes.
-(function(history) {
-
-  // Wrap pushState
-  const originalPushState = history.pushState;
-  history.pushState = function(...args) {
-    const result = originalPushState.apply(history, args);
-    window.dispatchEvent(new Event('locationchange'));
-    return result;
-  };
-
-  // Wrap replaceState
-  const originalReplaceState = history.replaceState;
-  history.replaceState = function(...args) {
-    const result = originalReplaceState.apply(history, args);
-    window.dispatchEvent(new Event('locationchange'));
-    return result;
-  };
-
-  // Listen for popstate (back/forward)
-  window.addEventListener('popstate', () => window.dispatchEvent(new Event('locationchange')));
-
-})(window.history);
-
-// Listen for the custom location change event
-window.addEventListener('locationchange', () => setTimeout(() => processPage(), 0))
-// window.addEventListener('locationchange', () => setTimeout(() => console.log(location.href), 0))
 processPage()
