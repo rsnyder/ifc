@@ -496,7 +496,7 @@ const makeEntityPopups = () => {
 
 const processPage = () => {
   console.log('processPage')
-  let content = document.querySelector('section.normal.markdown-section')
+  let content = document.querySelector('section.normal.markdown-section, article.post')
   content.innerHTML = restructureMarkdownToSections(content).innerHTML
 
   addMessageHandler()
