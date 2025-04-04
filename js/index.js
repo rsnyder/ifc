@@ -241,9 +241,9 @@ const makeTabs = (rootEl) => {
 
 const addMessageHandler = () => {
   window.addEventListener('message', (event) => {
-    console.log(event)
     if (event.data.type === 'setAspect') {
       const sendingIframe = Array.from(document.querySelectorAll('iframe')).find((iframe) => iframe.contentWindow === event.source)
+      console.log('setAspect', sendingIframe, event.data.aspect)
       if (sendingIframe) sendingIframe.style.aspectRatio = event.data.aspect
     } else if (event.data.type === 'openLink') {
       window.open(event.data.url, '_blank')
