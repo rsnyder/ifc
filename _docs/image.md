@@ -170,14 +170,14 @@ In this example the positioning properties `medium` and `center` are used to dis
 ###### Markdown
 
 ```markup
-`image src=gh:rsnyder/ifc/main/docs/components/monument-valley.jpg medium center box-shadow static`
+`image src=gh:rsnyder/ifc/main/docs/components/monument-valley.jpg medium center box-shadow`
 ```
 
 ###### HTML
 
 ```html
 <iframe
-  src="image?src=gh:rsnyder/ifc/main/docs/components/monument-valley.jpg&static"
+  src="image?src=gh:rsnyder/ifc/main/docs/components/monument-valley.jpg"
   class="medium center box-shadow"
   allowfullscreen
 ></iframe>
@@ -185,7 +185,7 @@ In this example the positioning properties `medium` and `center` are used to dis
 
 ###### Rendered
 
-`image src=gh:rsnyder/ifc/main/docs/components/monument-valley.jpg medium center box-shadow static`
+`image src=gh:rsnyder/ifc/main/docs/components/monument-valley.jpg medium center box-shadow`
 
 ### Annotations 
 
@@ -197,14 +197,14 @@ In this example the positioning properties `medium` and `center` are used to dis
 ###### Markdown
 
 ```markup
-`image src=wc:Monument_Valley,_Utah,_USA_(23611451292).jpg medium center box-shadow static`
+`image src=wc:Monument_Valley,_Utah,_USA_(23611451292).jpg medium center box-shadow`
 ```
 
 ###### HTML
 
 ```html
 <iframe
-  src="image?src=wc:Monument_Valley,_Utah,_USA_(23611451292).jpg&static"
+  src="image?src=wc:Monument_Valley,_Utah,_USA_(23611451292).jpg"
   class="medium center box-shadow"
   allowfullscreen
 ></iframe>
@@ -212,5 +212,5 @@ In this example the positioning properties `medium` and `center` are used to dis
 
 ###### Rendered
 
-`image src=wc:Monument_Valley,_Utah,_USA_(23611451292).jpg medium center box-shadow static`
+`image src=wc:Monument_Valley,_Utah,_USA_(23611451292).jpg medium center box-shadow`
 
