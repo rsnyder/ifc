@@ -1,6 +1,7 @@
 ---
 title: Image
 layout: doc
+category: component
 ---
 
 # Image

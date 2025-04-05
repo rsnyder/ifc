@@ -1,6 +1,7 @@
 ---
 title: Audio
 layout: doc
+category: component
 ---
 
 # Audio

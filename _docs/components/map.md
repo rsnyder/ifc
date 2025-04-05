@@ -1,6 +1,7 @@
 ---
 title: Map
 layout: doc
+category: component
 ---
 
 # Map

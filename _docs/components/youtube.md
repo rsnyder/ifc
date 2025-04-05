@@ -1,6 +1,7 @@
 ---
 title: YouTube
 layout: doc
+category: component
 ---
 
 # YouTube

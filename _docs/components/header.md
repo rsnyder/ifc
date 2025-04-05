@@ -1,6 +1,7 @@
 ---
 title: Header
 layout: doc
+category: component
 ---
 
 # Header

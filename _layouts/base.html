@@ -33,7 +33,13 @@
                 {%- for path in page_paths -%}
                   {%- assign hyperpage = site.pages | where: "path", path | first -%}
                   {%- if hyperpage.title %}
-                    <a class="nav-item" href="{{ hyperpage.url | relative_url }}">{{ hyperpage.title | escape }}</a>
+                    {%- if hyperpage.title == 'Blog' %}
+                      {% if site.blog.enabled %}
+                        <a class="nav-item" href="{{ hyperpage.url | relative_url }}">{{ hyperpage.title | escape }}</a>
+                      {%- endif -%}
+                    {% else %}
+                      <a class="nav-item" href="{{ hyperpage.url | relative_url }}">{{ hyperpage.title | escape }}</a>
+                    {%- endif -%}
                   {%- endif -%}
                 {%- endfor -%}
               </div>
@@ -42,8 +48,15 @@
             <div class="slab">
               {%- for path in page_paths -%}
                 {%- assign hyperpage = site.pages | where: "path", path | first -%}
+                {%- assign blogEnabled = site.blog.enabled -%}
                 {%- if hyperpage.title %}
-                  <a class="nav-item" href="{{ hyperpage.url | relative_url }}">{{ hyperpage.title | escape }}</a>
+                  {%- if hyperpage.title == 'Blog' %}
+                    {% if site.blog.enabled %}
+                        <a class="nav-item" href="{{ hyperpage.url | relative_url }}">{{ hyperpage.title | escape }}</a>
+                      {%- endif -%}
+                    {% else %}
+                    <a class="nav-item" href="{{ hyperpage.url | relative_url }}">{{ hyperpage.title | escape }}</a>
+                  {%- endif -%}
                 {%- endif -%}
               {%- endfor -%}
             </div>
@@ -66,8 +79,9 @@
     
         <div class="footer-col-wrapper">
           <div class="footer-col">
-            
-          {%- if site.show_rss_feed %}
+          
+          {%- if page.title == 'Blog' %}
+            {%- if site.blog.show_rss_feed %}
               <a href="{{ site.feed.path | default: 'feed.xml' | absolute_url }}">
                 <svg class="svg-icon orange">
                   <path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194
@@ -77,6 +91,7 @@
                   />
                 </svg><span>Subscribe</span>
               </a>
+            {%- endif %}
           {%- endif %}
 
           <!--
@@ -130,7 +145,9 @@
 
       maxWidth = maxWidth || '{{ site.max-width }}'
       if (maxWidth) {
-        document.querySelector('main.page-content .wrapper').style.maxWidth = maxWidth === 'full' ? 'unset' : maxWidth
+        document.querySelectorAll('.site-header .wrapper, .site-footer .wrapper, .page-content .wrapper').forEach((el) => {
+          el.style.maxWidth = maxWidth === 'full' ? 'unset' : maxWidth
+        })
       }
 
     </script>

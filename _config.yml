@@ -1,14 +1,14 @@
-title: Juncture IFC
+title: Juncture
 
 description: >
-  Juncture Iframe Components.
+  Juncture Website Framework.
 
 author:
   name: Ron Snyder
   email: ron@snyderjr.com
 
 collections:
-  pages:
+  components:
     output: true
     permalink: /:collection/:path/
   docs:
@@ -17,21 +17,22 @@ collections:
   examples:
     output: true
     permalink: /:collection/:path/
-  components:
-    output: true
-    permalink: /:collection/:path/
 
 nav_pages:
-  - _pages/about.md
-  - _pages/docs.md
-  - _pages/examples.md
-  - _pages/blog.md
+  - about.md
+  - docs.md
+  - examples.md
+  - blog.md
 
 max-width: 1000px
 
-show_excerpts: true
-show_rss_feed: true
-show_github_link: true
+blog:
+  enabled: true
+  show_excerpts: true
+  show_rss_feed: true
+
+footer:
+  show_github_link: true
 
 plugins:
   - jekyll-feed
