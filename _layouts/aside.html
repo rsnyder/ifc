@@ -1,0 +1,238 @@
+---
+layout: base
+---
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  /* Hide the checkbox */
+  #sidebar-toggle {
+    display: none;
+  }
+
+  /* Toggle button styling - positioned fixed so it's always visible */
+  .toggle-label {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 220px;
+    /* width: 30px; */
+    height: 30px;
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    opacity: 0.7;
+    transition: opacity 0.2s, left 0.3s;
+  }
+
+  .toggle-label:hover {
+    opacity: 1;
+  }
+
+  /* SVG icons styling */
+  .icon {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: #555;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  aside {
+    background-color: #f8f9fa;
+    width: 250px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    height: 100vh;
+    position: sticky;
+    top: 96px;
+    flex-shrink: 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    margin-left: -250px; /* Default hidden */
+  }
+
+  main {
+    flex-grow: 1;
+    padding: 20px;
+    transition: all 0.3s ease;
+    width: 100%; /* Default full width */
+    position: relative;
+    padding-bottom: 100vh;
+  }
+
+  nav {
+    /* margin-top: 30px; */
+  }
+
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  nav ul li {
+    margin-bottom: 15px;
+  }
+
+  nav ul li a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+  }
+
+  nav ul li a:hover {
+    background-color: #e9ecef;
+  }
+
+  /* When sidebar is toggled */
+  #sidebar-toggle:checked ~ .container aside {
+    margin-left: 0; /* Show sidebar */
+  }
+
+  #sidebar-toggle:checked ~ .container main {
+    width: calc(100% - 250px); /* Reduce main width */
+  }
+
+  /* When sidebar is open, move toggle button */
+  #sidebar-toggle:checked ~ .toggle-label {
+    left:  220px;
+  }
+
+  /* Media query for responsive behavior */
+  @media screen and (min-width: 769px) {
+    /* Desktop default state - override the default hidden state */
+    .container aside {
+      margin-left: 0; /* Show sidebar by default on desktop */
+    }
+
+    .container main {
+      width: calc(100% - 250px); /* Reduce main width by default on desktop */
+    }
+    
+    /* Desktop toggle behavior - explicitly handle both states */
+    #sidebar-toggle:checked ~ .container aside {
+      margin-left: 0; /* Keep sidebar visible when checked */
+    }
+    
+    #sidebar-toggle:not(:checked) ~ .container aside {
+      margin-left: -250px; /* Hide sidebar when unchecked */
+    }
+
+    #sidebar-toggle:not(:checked) ~ .container aside nav {
+      opacity: 0;
+    }
+
+    #sidebar-toggle:not(:checked) ~ .container aside {
+      background-color: inherit;
+      box-shadow: none;
+    }
+ 
+    #sidebar-toggle:not(:checked) ~ .container main {
+      width: 100%; /* Full width when sidebar is hidden */
+    }
+    
+    #sidebar-toggle:not(:checked) ~ .toggle-label {
+      left: -20px; /* Move toggle button back when sidebar is hidden */
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    aside {
+      position: fixed;
+      z-index: 1000;
+    }
+
+    /* Mobile toggle behavior */
+    #sidebar-toggle:checked ~ .container aside {
+      margin-left: -280px; /* Show sidebar when checked */
+      display: none;
+    }
+    .toggle-label {
+      display: none; 
+    }
+    
+    .container aside {
+      margin-left: -250px; /* Hide sidebar when unchecked */
+    }
+    
+    main {
+      width: 100%; /* Always full width on mobile */
+    }
+  }
+
+  .properties p > strong > a { color: crimson; font-size: 110%; text-decoration: none; }
+  .properties table { 
+    margin-left:3rem; 
+    width: calc(100% - 6rem); 
+    border:1px solid #555;
+  }
+  .properties td, .properties th {
+    border:1px solid #555;
+    padding: 8px;
+    line-height: 1.2;
+  }
+  .properties th {
+    background-color:#E2F0F7;
+    font-weight:bold !important;
+    text-align:center !important;
+  }
+</style>
+
+<article class="post h-entry container" itemscope itemtype="http://schema.org/BlogPosting">
+  
+  <!-- Hidden checkbox that controls the sidebar state -->
+  <input type="checkbox" id="sidebar-toggle" checked>
+  <!-- Label that serves as our toggle button -->
+
+  <div class="container">
+    <aside id="sidebar">
+      <label for="sidebar-toggle" class="toggle-label">
+        <svg class="icon" viewBox="0 0 24 24">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </label>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="{{site.baseurl}}/docs/components/audio">Audio</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main id="main-content" class="post-content e-content" itemprop="articleBody">
+      {{ content }}
+    </main>
+  </div>
+
+</article>
+
+<script>
+  let maxWidth = '{{ page.max-width }}';
+</script>

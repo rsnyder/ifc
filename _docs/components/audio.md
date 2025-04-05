@@ -1,6 +1,6 @@
 ---
 title: Audio
-layout: doc
+layout: aside
 category: component
 ---
 

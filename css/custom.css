@@ -43,6 +43,12 @@ iframe {
   width: 100%;
 }
 
+iframe[src*="breadcrumbs"] {
+  height: 2em;
+  box-shadow: none;
+  margin: 0;
+}
+
 iframe[src*="youtube"] {
   aspect-ratio: 16/9;
 }

@@ -493,7 +493,8 @@ const makeEntityPopups = () => {
 ////////// End Wikidata Entity functions //////////
 
 const processPage = () => {
-  let content = document.querySelector('section.normal.markdown-section, div.post-content, div.blog')
+  console.log('Processing page')
+  let content = document.querySelector('section.normal.markdown-section, div.post-content, div.blog, main.post-content')
   console.log(content)
   if (!content) content = document.body
   let newContent = restructureMarkdownToSections(content)

@@ -62,8 +62,11 @@
             </div>
           </nav>
         {%- endunless %}
+        
+        <iframe src="/components/breadcrumbs"></iframe>
 
       </div>
+
     </header>
 
     <main class="page-content" aria-label="Content">
@@ -149,6 +152,12 @@
           el.style.maxWidth = maxWidth === 'full' ? 'unset' : maxWidth
         })
       }
+
+      let toggleBtn = document.getElementById('toggle-btn')
+      console.log('Toggle button:', toggleBtn)
+      toggleBtn?.addEventListener('click', () => {
+        console.log('Toggle button clicked');
+      });
 
     </script>
   </body>
